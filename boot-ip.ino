@@ -1,70 +1,57 @@
-//include library to interface with LCD
 #include <LiquidCrystal.h>
 
-// initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 void setup() {
-  // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+  lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot.");
+  lcd.print("to boot.");
 }
 
 void loop() {
-  
+  if (Serial.available() > 0) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("ip:");
+    lcd.setCursor(0, 1);
+    lcd.print(Serial.readString());
+  }
+  else {
+    load();
+  }
 }
 
-/*maybe...
- 
-  void loading() {
-  lcd.clear()
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+
+void load() {
+  lcd.clear();
+  lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot.");
-    lcd.clear()
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+  lcd.print("to boot");
+  lcd.clear();
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot..");
-    lcd.clear()
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+  lcd.print("to boot.");
+  lcd.clear();
+  lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot...");
-    lcd.clear()
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+  lcd.print("to boot..");
+  lcd.clear();
+  lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot ..");
-    lcd.clear()
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+  lcd.print("to boot...");
+  lcd.clear();
+  lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot  .");
-    lcd.clear()
-  // Print message to the LCD.
-  lcd.write("Wiating for pi");
-  //next line
+  lcd.print("to boot ..");
+  lcd.clear();
+  lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
-  //print message to LCD
-  lcd.write("to boot   ");
+  lcd.print("to boot  .");
+  lcd.clear();
+  lcd.print("Wiating for pi");
+  lcd.setCursor(0, 1);
+  lcd.print("to boot   ");
 }
-*/
+
 
 
