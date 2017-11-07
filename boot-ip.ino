@@ -36,36 +36,36 @@ void load() {
   lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot");
-  sleep(1);
+  delay(1000);
   lcd.clear();
   lcd.setCursor(0, 1);
   lcd.print("to boot.");
-  sleep(1);
+  delay(1000);
   lcd.clear();
   lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot..");
-  sleep(1);
+  delay(1000);
   lcd.clear();
   lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot...");
-  sleep(1);
+  delay(1000);
   lcd.clear();
   lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot ..");
-  sleep(1);
+  delay(1000);
   lcd.clear();
   lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot  .");
-  sleep(1);
+  delay(1000);
   lcd.clear();
   lcd.print("Wiating for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot   ");
-  sleep(1);
+  delay(1000);
 }
 
 
