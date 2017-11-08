@@ -3,7 +3,7 @@
 
 //initialize LiquidCrustal with pin numbers
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-
+boolean recieved;
 void setup() {
   //start serial communications with computer
   Serial.begin(9600);
@@ -13,11 +13,13 @@ void setup() {
   lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot.");
+  recieved = false;
 }
 
 void loop() {
   //if the computer recoginized us, print the ip
   if (Serial.available() > 0) {
+    recieved = true;
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("ip:");
@@ -25,7 +27,7 @@ void loop() {
     lcd.print(Serial.readString());
   }
   //otherwise, display loading animation
-  else {
+  else if(recieved == false){
     load();
   }
 }
@@ -33,27 +35,27 @@ void loop() {
 //loading animation
 void load() {
   lcd.clear();
-  lcd.print(" for pi");
+  lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot.");
   delay(250);
   lcd.clear();
-  lcd.print(" for pi");
+  lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot..");
   delay(250);
   lcd.clear();
-  lcd.print(" for pi");
+  lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot...");
   delay(250);
   lcd.clear();
-  lcd.print(" for pi");
+  lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot ..");
   delay(250);
   lcd.clear();
-  lcd.print(" for pi");
+  lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot  .");
   delay(250);
