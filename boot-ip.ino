@@ -33,39 +33,35 @@ void loop() {
 //loading animation
 void load() {
   lcd.clear();
-  lcd.print("Wiating for pi");
-  lcd.setCursor(0, 1);
-  lcd.print("to boot");
-  delay(1000);
-  lcd.clear();
+  lcd.print(" for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot.");
-  delay(1000);
+  delay(250);
   lcd.clear();
-  lcd.print("Wiating for pi");
+  lcd.print(" for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot..");
-  delay(1000);
+  delay(250);
   lcd.clear();
-  lcd.print("Wiating for pi");
+  lcd.print(" for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot...");
-  delay(1000);
+  delay(250);
   lcd.clear();
-  lcd.print("Wiating for pi");
+  lcd.print(" for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot ..");
-  delay(1000);
+  delay(250);
   lcd.clear();
-  lcd.print("Wiating for pi");
+  lcd.print(" for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot  .");
-  delay(1000);
+  delay(250);
   lcd.clear();
-  lcd.print("Wiating for pi");
+  lcd.print("Waiting for pi");
   lcd.setCursor(0, 1);
   lcd.print("to boot   ");
-  delay(1000);
+  delay(250);
 }
 
 
