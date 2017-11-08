@@ -20,11 +20,15 @@ void loop() {
   //if the computer recoginized us, print the ip
   if (Serial.available() > 0) {
     recieved = true;
+    ip = Serial.read();
+    char ipstr[2];
+    ipstr[0] = data
+    ipstr[1] = "\0"
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("ip:");
     lcd.setCursor(0, 1);
-    lcd.print(Serial.readString());
+    lcd.print(ipstr);
   }
   //otherwise, display loading animation
   else if(recieved == false){
