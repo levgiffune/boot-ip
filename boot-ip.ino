@@ -2,7 +2,7 @@
 #include <LiquidCrystal.h>
 #include <String.h>
 
-//initialize LiquidCrustal with pin numbers
+//initialize LiquidCrustal with raspin numbers
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 boolean recieved;
 void setup() {
@@ -11,9 +11,9 @@ void setup() {
   //tell LiquidCrystal the size of the LCD
   lcd.begin(16, 2);
   //print loading message
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot.");
+  lcd.print("raspi.");
   recieved = false;
 }
 
@@ -26,7 +26,9 @@ void loop() {
     lcd.setCursor(0, 0);
     lcd.print("ip:");
     lcd.setCursor(0, 1);
-    lcd.print(Serial.readString());
+    String ip = Serial.readString();
+    Serial.println(ip);
+    lcd.print(ip);
   }
   //otherwise, display loading animation
   else if(recieved == false){
@@ -37,34 +39,34 @@ void loop() {
 //loading animation
 void load() {
   lcd.clear();
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot.");
+  lcd.print("raspi.");
   delay(250);
   lcd.clear();
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot..");
+  lcd.print("raspi..");
   delay(250);
   lcd.clear();
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot...");
+  lcd.print("raspi...");
   delay(250);
   lcd.clear();
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot ..");
+  lcd.print("raspi ..");
   delay(250);
   lcd.clear();
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot  .");
+  lcd.print("raspi  .");
   delay(250);
   lcd.clear();
-  lcd.print("Waiting for pi");
+  lcd.print("Waiting for");
   lcd.setCursor(0, 1);
-  lcd.print("to boot   ");
+  lcd.print("raspi   ");
   delay(250);
 }
 

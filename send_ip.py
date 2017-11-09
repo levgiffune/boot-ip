@@ -1,13 +1,15 @@
 
-import os, serial, time, sys
+import serial, time, subprocess
 
-ip = os.system("curl ipinfo.io/ip")
+ip = subprocess.check_output(["curl", "ipinfo.io/ip"])
+ip = ip[:-1]
 
 
 print ip
-arduino = serial.Serial('/dev/cu.usbmodem1411', 9600, timeout=1)
+
+
+
+arduino = serial.Serial('/dev/tty.usbmodem1411', 9600)
 time.sleep(5)
 
-while 1:
-    arduino.write(ip);
-
+arduino.write(ip);
