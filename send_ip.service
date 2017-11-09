@@ -1,0 +1,8 @@
+[Unit]
+Description=send ip to arduino
+
+[Service]
+ExecStart=/usr/bin/python /root/boot-ip/send_ip.py
+
+[Install]
+WantedBy=multi-user.target
