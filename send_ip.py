@@ -8,7 +8,6 @@ ip = ip[:-1]
 print ip
 
 
-
 arduino = serial.Serial('/dev/tty.usbmodem1411', 9600)
 time.sleep(5)
 
