@@ -5,4 +5,4 @@ Description=send ip to arduino
 ExecStart=/usr/bin/python /root/boot-ip/send_ip.py
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=network-online.target
