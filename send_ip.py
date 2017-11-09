@@ -1,7 +1,7 @@
 
 import serial, time, subprocess
 
-ip = subprocess.check_output(["curl", "ipinfo.io/ip"])
+ip = subprocess.check_output("curl ipinfo.io/ip", shell=True)
 ip = ip[:-1]
 
 
