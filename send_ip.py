@@ -1,21 +1,13 @@
-try:
-    import os, serial, time, sys
 
-    ip = os.system("curl ipinfo.io/ip")
-    print ip
+import os, serial, time, sys
 
-    try:
-    	arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=.1)
-    except serial.serialutil.SerialException:
-    	sys.exit(1)
+ip = os.system("curl ipinfo.io/ip")
 
 
-    try:
-    	while True:
-    		data = arduino.readline()[:-2] 
-    		if data == "recieved":
-    			arduino.write(ip);
-    except exception, e:
-    	sys.exit(2)
-except KeyboardInterrupt:
-    sys.exit(3)
+print ip
+arduino = serial.Serial('/dev/cu.usbmodem1411', 9600, timeout=.1)
+
+
+while 1:
+    arduino.write(ip);
+
