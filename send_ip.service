@@ -1,9 +1,15 @@
 [Unit]
-Description=send ip to arduino
-After=network-online.target
+Description=send public ip to arduino
+After=network.target
+Before=systemd-user-sessions.service
 
 [Service]
-ExecStart=/usr/bin/python /root/boot-ip/send_ip.py
+type=forking
+ExecStart=/root/boot-ip/send_ip.py start
+User=root
+RestartSec=10
+Restart=on-failure
+RemainAfterExit=yes
 
 [Install]
-WantedBy=network-online.target
+WantedBy=multi-user.target

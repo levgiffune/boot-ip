@@ -1,5 +1,11 @@
 display public ip of raspi on boot on analog display
 
+* must enable autologin in /etc/lightdm/lightdm.conf and 
+/etc/pam.d/lightdm-autologin (look it up) THE AUTOLOGIN USER AND TIMEOUT ARE 
+DEFINED TWO TIMES AND YOU MUST 
+UNCOMMENT BOTH
+
+
 circuit on arduino (with 2x16 lcd): 
  * LCD RS pin to digital pin 12
  * LCD Enable pin to digital pin 11
