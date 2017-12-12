@@ -1,7 +1,6 @@
 [Unit]
 Description=send public ip to arduino
-After=network.target
-Before=systemd-user-sessions.service
+After=network.target network-online.target
 
 [Service]
 type=forking
