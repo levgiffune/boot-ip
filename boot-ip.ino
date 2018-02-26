@@ -22,6 +22,7 @@ void loop() {
   if (Serial.available() > 0) {
     recieved = true;
     Serial.print("connected");
+    delay(1);
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("ip:");
